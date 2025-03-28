@@ -1,7 +1,7 @@
 Silver Price API
 ============
 
-Silver Price is a simple tool for getting the current price of silver. It returns the current price of silver in USD and in various units.
+Silver Price is a simple tool for getting the current price of silver. It returns the current price of silver in any currency and in various units.
 
 ![Build Status](https://img.shields.io/badge/build-passing-green)
 ![Code Climate](https://img.shields.io/badge/maintainability-B-purple)
@@ -70,13 +70,15 @@ Using the API client, you can perform requests to the API.
 ###### Define Query
 
 ```
-This API does not require a Query
+var queryOptions = new SilverPriceQueryOptions {
+  currency = "USD"
+};
 ```
 
 ###### Simple Request
 
 ```
-var response = apiClient.Execute();
+var response = apiClient.Execute(queryOptions);
 if(response.error != null) {
 	Console.WriteLine(response.error);
 } else {
