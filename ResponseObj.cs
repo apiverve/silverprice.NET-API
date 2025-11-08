@@ -4,39 +4,40 @@ using Newtonsoft.Json;
 
 namespace APIVerve
 {
-public class data
-{
-    [JsonProperty("currency")]
-    public string currency { get; set; }
+    /// <summary>
+    /// Data data
+    /// </summary>
+    public class Data
+    {
+        [JsonProperty("currency")]
+        public string Currency { get; set; }
 
-    [JsonProperty("gram")]
-    public double gram { get; set; }
+        [JsonProperty("gram")]
+        public double Gram { get; set; }
 
-    [JsonProperty("kilogram")]
-    public double kilogram { get; set; }
+        [JsonProperty("kilogram")]
+        public double Kilogram { get; set; }
 
-    [JsonProperty("ounce")]
-    public double ounce { get; set; }
+        [JsonProperty("ounce")]
+        public double Ounce { get; set; }
 
-    [JsonProperty("lastUpdated")]
-    public int lastUpdated { get; set; }
+        [JsonProperty("lastUpdated")]
+        public int LastUpdated { get; set; }
 
-}
+    }
+    /// <summary>
+    /// API Response object
+    /// </summary>
+    public class ResponseObj
+    {
+        [JsonProperty("status")]
+        public string Status { get; set; }
 
-public class ResponseObj
-{
-    [JsonProperty("status")]
-    public string status { get; set; }
+        [JsonProperty("error")]
+        public object Error { get; set; }
 
-    [JsonProperty("error")]
-    public object error { get; set; }
+        [JsonProperty("data")]
+        public Data Data { get; set; }
 
-    [JsonProperty("data")]
-    public data data { get; set; }
-
-    [JsonProperty("code")]
-    public int code { get; set; }
-
-}
-
+    }
 }
